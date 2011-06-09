@@ -1,0 +1,27 @@
+{
+  "version": "0.0.2",
+  "owner": "1",
+  "community": "1",
+  "category": "5",
+  "title": {
+    "en": "Google analytics code integrator",
+    "de": ""
+  },
+  "desc": {
+    "en": "This extensions helps you to integrate the google analytics code to your page.",
+    "de": ""
+  },
+  "tags": {
+    "en": "google, analytics, google analytics",
+    "de": ""
+  },
+  "domainProperties": {
+    "code": {
+      "label": "Google Analytics Code",
+      "desc": "Enter the google analytics code to activate. For example: UA-xxxxxxx-x",
+      "type": "text"
+    }
+  },
+  "writableFiles": "inc\/template\/googleanalytics\/*",
+  "depends": "kryn=>0.8.0"
+}
