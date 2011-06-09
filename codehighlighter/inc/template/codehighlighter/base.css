@@ -1,0 +1,15 @@
+.codehighlighter-block {
+  color: rgb(51, 51, 51); 
+  margin-bottom: 10px;
+  width: 530px;
+  overflow-x: auto;
+  font-family: monospace;
+  border: 1px dashed gray;
+  padding: 4px 4px 4px 8px;
+  background-color: rgb(249, 249, 249);
+}
+
+.codehighlighter-block-title {
+  padding: 3px;
+  border-bottom: 1px dashed gray;
+}

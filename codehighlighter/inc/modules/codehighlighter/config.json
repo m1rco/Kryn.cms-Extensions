@@ -1,0 +1,36 @@
+{
+  "version": "0.0.1",
+  "owner": "1",
+  "community": "1",
+  "category": "1",
+  "writableFiles": "inc\/template\/codehighlighter\/*",
+  "title": {
+    "en": "Code highlighter"
+  },
+  "desc": {
+    "en": "This extension provides you a way to publish color highlighted programming code via Javascript.\nJust pick the new content element and it will automatically highlight the content.\n(You should use HTML content element)\n\nSupports following languages (auto detect):\n\n * AVR Assembler\n * Apache\n * Bash\n * C#\n * C++\n * CSS\n * Delphi\n * HTML\/XML\n * Java\n * Javascript\n * PHP\n * Perl\n * Python\n * Ruby\n * SQL\n * VBscript\n\nUses <a href=\"http:\/\/softwaremaniacs.org\/soft\/highlight\/en\/\">Highlight.js<\/a> from \u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b Software Maniacs.\n\n"
+  },
+  "tags": {
+    "en": ""
+  },
+  "depends": "",
+  "themes": {
+    "Code highlighter": {
+      "layouts": [
+        
+      ],
+      "navigations": [
+        
+      ],
+      "contents": {
+        "Auto highlighter": "codehighlighter\/base.tpl"
+      },
+      "properties": [
+        
+      ],
+      "publicProperties": [
+        
+      ]
+    }
+  }
+}
