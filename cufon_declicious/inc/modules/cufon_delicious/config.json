@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "owner": "1",
+  "community": "1",
+  "category": "2",
+  "title": {
+    "en": "Cufon Delicious Font"
+  },
+  "desc": {
+    "en": "Provides the generated JavaScript Delicious Font file. Link:"
+  },
+  "tags": {
+    "en": ""
+  },
+  "writableFiles": ""
+}
