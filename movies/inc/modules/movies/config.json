@@ -1,0 +1,44 @@
+{
+  "version": "0.0.1",
+  "owner": "1",
+  "community": "1",
+  "category": "2",
+  "title": {
+    "en": "Movie integrator"
+  },
+  "desc": {
+    "en": "This plugin allows you to integrate youtube and google Videos by the normal link."
+  },
+  "tags": {
+    "en": "google, youtube, video, flash"
+  },
+  "plugins": {
+    "view" : [
+        "View video", {
+            "link": {
+                "label": "Link",
+                "desc": "Copy and paste the link to the video here"
+            },
+            "align": {
+                "label": "Align",
+                "type": "select",
+                "desc": "Define the alignment.",
+                "tableItems": [
+                    {"i": "left", "l": "Left"},
+                    {"i": "center", "l": "Center"},
+                    {"i": "right", "l": "Right"}
+                ],
+                "table_key": "i",
+                "table_label": "l"
+            },
+            "width": {
+                "label": "Width"
+            },
+            "height": {
+                "label": "Height"
+            }
+        }
+    ]
+  },
+  "writableFiles": "inc\/template\/movies\/*"
+}
