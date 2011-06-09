@@ -1,0 +1,33 @@
+.rotator-image-default {
+    padding: 13px;
+    position: relative;
+    width: 688px;
+    background-color: white;
+}
+.rotator-image-default-images {
+    float: left;
+    width: 638px;
+    margin: 0px 12px 0px 12px;
+    overflow: hidden;
+    height: 97px;
+    white-space:nowrap;
+}
+
+.rotator-image-default-images img {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.rotator-image-default-toLeft,
+.rotator-image-default-toRight {
+    cursor: pointer;
+}
+
+.rotator-image-default-toLeft {
+    float: left;
+    margin-right: 0px;
+}
+
+.rotator-image-default-toRight {
+    float: right;
+}

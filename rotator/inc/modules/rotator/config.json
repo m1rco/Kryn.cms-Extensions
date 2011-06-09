@@ -1,0 +1,73 @@
+{
+  "name": "rotator",
+  "version": "0.0.8",
+  "owner": "1",
+  "title": {
+    "de": "Bild- und Inhalts-Rotator",
+    "en": "Image and content rotater"
+  },
+  "desc": {
+    "de": "L\u00e4sst Bilder mit \u00fcberblendeffekt rotieren, Bilder via Thumpnail-Auflistung darstellen oder Inhalte rotieren (Kombinierbar mit slimbox\/lightbox (#slimbox)",
+    "en": "Let images rotate with some effects. Also thumpnail lists from a image directory is possible (great with slimbox\/lightbo (#slimbox)."
+  },
+  "community": "1",
+  "category": "2",
+  "plugins": {
+    "contentRotate": [
+      "Page contents",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/rotator\/contentRotator\/"
+        },
+        "pageRsn": {
+          "label": "Folder",
+          "type": "integer"
+        }
+      }
+    ],
+    "imageRotaterDefault": [
+      "Images",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/rotator\/imageRotatorDefault\/"
+        },
+        "folder": {
+          "label": "Folder",
+          "type": "string"
+        }
+      }
+    ],
+    "imageRotater": [
+      "Images (with resizing\/thumpnails)",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/rotator\/imageRotator\/"
+        },
+        "folder": {
+          "label": "Folder",
+          "type": "string"
+        },
+        "thumpSize": {
+          "label": "Thumpnail size",
+          "desc": "e.g. 50x50.",
+          "type": "string"
+        },
+        "bigSize": {
+          "label": "Big size",
+          "desc": "e.g. 1024x600.",
+          "type": "string"
+        }
+      }
+    ]
+  },
+  "writableFiles": "inc\/template\/rotator\/*"
+}
