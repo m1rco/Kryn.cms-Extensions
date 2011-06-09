@@ -1,0 +1,28 @@
+.eventCalendarMonthViewTable tr {
+	vertical-align: top;
+}
+
+
+.eventCalendarMonthViewDayText {
+	font-size: 14px;
+	padding-right: 20px;
+}
+
+
+.eventCalendarMonthViewOneEventSeperator {
+	margin: 5px 0px 15px 0px ;
+	border-bottom: 1px solid silver;
+}
+
+
+.eventCalendarMonthViewDaySeperator td{
+	border-bottom: 1px solid black;
+}
+
+div.eventCalendarMonthViewOneEventIntro {
+	font-size: 10px;
+
+
+.eventCalendarMonthViewOneEventTimeTitle {
+	font-weight: bold;
+}

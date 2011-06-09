@@ -1,0 +1,108 @@
+#calendar {
+    background: #FFFFFF;
+    padding: 13px 13px 20px 13px;
+    border-bottom: 1px solid #97938a;
+}
+
+.ka-datePicker-controls {
+    float: left;    
+    
+}
+
+.ka-datePicker-main-table {
+    border-collapse: collapse;
+    float: right;
+}
+
+.ka-datePicker-main-table td {
+    text-align: center;
+    width: 27px; 
+}
+
+.ka-datePicker-main-table td {
+    background: #EFEFEF;
+    font-size : 10px;
+}
+
+.ka-datePicker-main-table thead tr td {
+    background: transparent;
+    font-size : 12px;
+}
+
+
+.ka-datePicker-main-table thead td:hover {
+    background: transparent;
+} 
+
+table.ka-datePicker-main-table tr{ 
+    height: 28px;
+    vertical-align: middle;
+}
+
+table.ka-datePicker-main-table thead tr {
+    vertical-align: top;        
+    height: 20px;
+}
+
+
+.ka-button-prev, .ka-button-next{
+    background: #444;
+    display: block;
+    float: left;    
+    height: 22px;
+    width: 26px;
+}
+
+
+
+.ka-datePicker-month-show, .ka-datePicker-year-show {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.ka-datePicker-month-select {
+    margin-bottom: 10px;
+}
+
+
+
+
+a.ka-datePicker-item-selected {
+    color: #B35301;
+}
+
+td.ka-datePicker-item-selected {
+    background: #999;
+}
+
+td.ka-datePicker-item-event {
+   background: silver;
+}
+
+.ka-datePicker-main-table td.ka-datePicker-item-event:hover {
+    background: silver;
+}
+
+td.ka-datePicker-item-today {
+    background: grey;    
+}
+
+
+a.ka-datePicker-item-today {
+     color: #000000;
+}
+a.ka-datePicker-item-event { 
+    cursor: pointer;
+}
+
+.ka-datePicker-info-box {
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.ka-datePicker-info-box img {
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 3px;
+}

@@ -1,0 +1,343 @@
+{
+  "version": "0.0.5",
+  "owner": "1",
+  "community": "1",
+  "category": "16",
+  "title": {
+    "en": "Event calendar"
+  },
+  "desc": {
+    "en": "This extension helps you manage and display your events.\n\nFeatures:\n\n- categorize events\n- wysiwyg editor for teaser text and full event description\n- customizable list, upcoming, month and detail view\n-javascript \/ ajax powered date picker\n- direct export of an event for outlook or ical using ics files\n- template based"
+  },
+  "admin": {
+    "event_calendar": {
+      "title": "Event calendar",
+      "multi": true,
+      "childs": {
+        "list": {
+          "title": "Events",
+          "type": "list",
+          "class": "eventCalendarList",
+          "isLink": true,
+          "multi": true,
+          "childs": {
+            "add": {
+              "title": "Add event",
+              "type": "add",
+              "class": "eventCalendarAdd",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Edit event",
+              "type": "edit",
+              "class": "eventCalendarEdit",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            }
+          }
+        },
+        "event_category": {
+          "title": "Event categories",
+          "type": "list",
+          "class": "eventCalendarCategoryList",
+          "isLink": true,
+          "multi": true,
+          "childs": {
+            "add": {
+              "title": "Add event category",
+              "type": "add",
+              "class": "eventCalendarCategoryAdd",
+              "isLink": true,
+              "multi": true,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Edit event category",
+              "type": "edit",
+              "class": "eventCalendarCategoryEdit",
+              "isLink": true,
+              "multi": true,
+              "childs": [
+                
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "plugins": {
+    "eventDetail": [
+      "Event detail view",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/event_calendar\/detail\/"
+        },
+        "category_rsn": {
+          "label": "Category\/s",
+          "type": "select",
+          "multi": true,
+          "table": "event_calendar_category",
+          "table_label": "title",
+          "table_id": "rsn"
+        }
+      }
+    ],
+    "eventDatePicker": [
+      "Event date picker",
+      {
+        "itemsPerPage": {
+          "label": "Maximum Items to display",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "detailPage": {
+          "label": "Detailpage",
+          "type": "page"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/event_calendar\/datePicker\/"
+        },
+        "category_rsn": {
+          "label": "Category\/s",
+          "type": "select",
+          "multi": true,
+          "table": "event_calendar_category",
+          "table_label": "title",
+          "table_id": "rsn"
+        }
+      }
+    ],
+    "eventList": [
+      "Event list",
+      {
+        "itemsPerPage": {
+          "label": "Count per page",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "maxPages": {
+          "label": "Max pages",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "detailPage": {
+          "label": "Detailpage",
+          "type": "page"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/event_calendar\/list\/"
+        },
+        "category_rsn": {
+          "label": "Category\/s",
+          "type": "select",
+          "multi": true,
+          "table": "event_calendar_category",
+          "table_label": "title",
+          "table_id": "rsn"
+        },
+        "period": {
+          "label": "Period of days",
+          "desc": "Limit display of events to a period of days",
+          "type": "int",
+          "length": "5",
+          "default": "1"
+        },
+        "eventFrom": {
+          "label": "Events from date",
+          "desc": "Limit display of events to a specific date",
+          "type": "datetime"
+        },
+        "eventTo": {
+          "label": "Events till date",
+          "desc": "Limit display of events to a specific date",
+          "type": "datetime"
+        }
+      }
+    ],
+    "eventMonthView": [
+      "Event month view",
+      {
+        "detailPage": {
+          "label": "Detailpage",
+          "type": "page"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/event_calendar\/monthView\/"
+        },
+        "category_rsn": {
+          "label": "Category\/s",
+          "type": "select",
+          "multi": true,
+          "table": "event_calendar_category",
+          "table_label": "title",
+          "table_id": "rsn"
+        },
+        "showFullWeeks": {
+          "label": "Show full weeks",
+          "desc": "Select yes if you use a calendar sheet template and you want to get all weeks with 7 days",
+          "type": "select",
+          "multi": false,
+          "tableItems": [
+            {
+              "name": "No",
+              "nameKey": "0"
+            },
+            {
+              "name": "Yes",
+              "nameKey": "1"
+            }
+          ],
+          "table_label": "name",
+          "table_id": "nameKey"
+        }
+      }
+    ],
+    "upcomingEvents": [
+      "Upcoming events",
+      {
+        "eventCount": {
+          "label": "Count of upcoming events to display",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "detailPage": {
+          "label": "Detailpage",
+          "type": "page"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/event_calendar\/upcoming\/"
+        },
+        "category_rsn": {
+          "label": "Category\/s",
+          "type": "select",
+          "multi": true,
+          "table": "event_calendar_category",
+          "table_label": "title",
+          "table_id": "rsn"
+        },
+        "eventTo": {
+          "label": "Events till date",
+          "desc": "Limit display of events to a specific date",
+          "type": "datetime"
+        }
+      }
+    ]
+  },
+  "db": {
+    "event_calendar_category": {
+      "rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "title": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ]
+    },
+    "event_calendar": {
+      "rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "category_rsn": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ],
+      "title": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "intro": [
+        "text",
+        "",
+        "-",
+        false
+      ],
+      "introImage": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "content": [
+        "text",
+        "",
+        "-",
+        false
+      ],
+      "created": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "event_date": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ],
+      "event_date_end": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "event_location": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "deactivate": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ]
+    }
+  },
+  "tags": {
+    "en": "calendar, events, event, ics"
+  },
+  "writableFiles": "inc\/template\/event_calendar\/*"
+}
