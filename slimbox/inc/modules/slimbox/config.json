@@ -1,0 +1,20 @@
+{
+    "title": {
+        "de": "Slimbox",
+        "en": "Slimbox"
+    },
+    "desc": {
+        "en": "Activate the Lightbox (Slimbox). A simple and great script, that shows images in a overlay.",
+        "de": "Aktiviert die Lightbox (Slimbox). Ein einfaches und gutes Skript, das Bilder in einem Overlay anzeigt."
+    },
+
+    "tags": {
+        "en": "Slimbox, Lightbox"
+    },
+
+    "version": "0.0.1",
+    "owner": "1",
+    "community": "1",
+    "category": "2"
+
+}
