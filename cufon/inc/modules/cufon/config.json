@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "owner": "1",
+  "community": "1",
+  "category": "2",
+  "title": {
+    "en": "Cufon JavaScript Font Generator",
+    "de": ""
+  },
+  "desc": {
+    "en": "Cuf\u00f3n aims to become a worthy alternative to sIFR, which despite its merits still remains painfully tricky to set up and use.",
+    "de": ""
+  },
+  "tags": {
+    "en": "cufon, sifr alternative, javascript font",
+    "de": ""
+  },
+  "writableFiles": ""
+}
