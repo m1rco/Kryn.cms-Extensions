@@ -1,0 +1,211 @@
+{
+  "title": {
+    "en": "Newsletter Management",
+    "de": "Newsletter Verwaltung"
+  },
+  "version": "0.1.0",
+  "owner": "1",
+  "community": "1",
+  "category": "19",
+  "desc": {
+    "de": "Lassen Sie Besucher mittel double-opt-in Verfahren an einen Newsletter anmelden",
+    "en": "Visitors can subscribe to a newsletter with double-opt-in."
+  },
+  "admin": {
+    "newsletter": {
+      "title": "Newsletter",
+      "type": "list",
+      "class": "newsletterList",
+      "defaultWidth": 700,
+      "childs": {
+        "add": {
+          "title": "Newsletter add",
+          "type": "add",
+          "class": "newsletterAdd",
+          "fixedHeight": 150,
+          "fixedWidth": 350,
+          "isLink": false
+        },
+        "edit": {
+          "title": "Newsletter edit",
+          "type": "edit",
+          "class": "newsletterEdit",
+          "fixedHeight": 150,
+          "fixedWidth": 350,
+          "isLink": false
+        },
+        "participiants": {
+          "title": "Participiants",
+          "type": "list",
+          "class": "participiants",
+          "isLink": false
+        }
+      }
+    }
+  },
+  "db": {
+    "newsletter": {
+      "rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "title": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ]
+    },
+    "newsletter_participant": {
+      "rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "newsletter_rsn": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ],
+      "status": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ],
+      "email": [
+        "varchar",
+        "255",
+        "DB_INDEX",
+        false
+      ],
+      "name": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "lastname": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "sex": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "activationKey": [
+        "varchar",
+        "32",
+        "DB_INDEX",
+        false
+      ],
+      "ip": [
+        "varchar",
+        "16",
+        "-",
+        false
+      ],
+      "created": [
+        "int",
+        "",
+        "-",
+        false
+      ]
+    }
+  },
+  "plugins": {
+    "unsubscribe": [
+      "Unsubscribe form",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/newsletter\/unsubscribe\/"
+        },
+        "text": {
+          "label": "Text",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/newsletter\/mailUnsubscribeTemplates\/"
+        },
+        "sent_email_after_unsubscribe": {
+          "label": "Send e-mail after unsubscription",
+          "type": "checkbox",
+          "depends": {
+            "subject_after_unsubscribe": {
+              "label": "subject for e-mail after unsubscription",
+              "type": "checkbox",
+              "needValue": 1
+            },
+            "template_after_unsubscribe": {
+              "label": "Text email after unsubscription",
+              "type": "files",
+              "withExtension": false,
+              "directory": "inc\/template\/newsletter\/mailAfterUnsubscribeTemplates\/",
+              "needValue": 1
+            }
+          }
+        }
+      }
+    ],
+    "content": [
+      "Subscribe form",
+      {
+        "newsletter_rsn": {
+          "label": "Newsletter",
+          "type": "select",
+          "table": "newsletter",
+          "table_label": "title",
+          "table_id": "rsn"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/newsletter\/frontend\/"
+        },
+        "h1": {
+          "label": "Emails",
+          "type": "headline"
+        },
+        "email": {
+          "label": "Confirm Email text",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/newsletter\/mailTemplates\/"
+        },
+        "subject": {
+          "label": "Subject",
+          "type": "string"
+        },
+        "from": {
+          "label": "EMail from",
+          "type": "string"
+        },
+        "target": {
+          "label": "Target",
+          "type": "string"
+        },
+        "formId": {
+          "label": "Form Id",
+          "type": "string"
+        }
+      }
+    ]
+  },
+  "writableFiles": "",
+  "tags": {
+    "de": "",
+    "en": "newsletter,subscribe,double-opt"
+  },
+  "depends": ""
+}

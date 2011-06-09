@@ -1,0 +1,71 @@
+{
+  "table": "newsletter_participant",
+  "itemsPerPage": 20,
+  "orderBy": "name",
+  "filter": [
+    "name",
+    "email"
+  ],
+  "add": true,
+  "edit": false,
+  "remove": true,
+  "primary": [
+    "rsn"
+  ],
+  "import": {
+    "csv": [
+      "name",
+      "firstname",
+      "email",
+      "ip",
+      "status"
+    ]
+  },
+  "export": {
+    "csv": [
+      "name",
+      "firstname",
+      "email",
+      "ip",
+      "status"
+    ]
+  },
+  "columns": {
+    "name": {
+      "label": "Name",
+      "type": "text"
+    },
+    "newsletter_rsn": {
+      "label": "Newsletter",
+      "type": "select",
+      "table": "newsletter",
+      "table_label": "title",
+      "table_key": "rsn"
+    },
+    "firstname": {
+      "label": "Vorname",
+      "type": "text"
+    },
+    "email": {
+      "label": "E-Mail",
+      "type": "text"
+    },
+    "ip": {
+      "label": "IP",
+      "type": "text"
+    },
+    "status": {
+      "label": "Confirmed",
+      "type": "text",
+      "imageMap": {
+        "1": "inc\/template\/admin\/images\/icons\/tick.png",
+        "0": "inc\/template\/admin\/images\/icons\/exclamation.png"
+      }
+    }
+  },
+  "iconAdd": "add.png",
+  "iconEdit": "page_white_edit.png",
+  "iconDelete": "delete.png",
+  "navigation": false,
+  "type": "windowList"
+}
