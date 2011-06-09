@@ -1,0 +1,129 @@
+{
+  "version": "0.0.4",
+  "owner": "1",
+  "community": "1",
+  "category": "1",
+  "desc": {
+    "de": "Kleine Verwaltung von FAQs. Auflistung in Kategorien m\u00f6glich. Inhalte via WYSIWYG pflegbar.",
+    "en": "Small management for FAQs. Display the FAQs in Categories."
+  },
+  "title": {
+    "de": "Kleine FAQ Verwaltung",
+    "en": "Small FAQ management"
+  },
+  "admin": {
+    "smallfaq": {
+      "title": "FAQ management",
+      "childs": {
+        "list": {
+          "title": "Overview",
+          "type": "list",
+          "class": "smallfaqList",
+          "isLink": true,
+          "childs": {
+            "add": {
+              "title": "FAQ add",
+              "type": "add",
+              "class": "smallfaqAdd",
+              "isLink": false,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Edit",
+              "type": "edit",
+              "class": "smallfaqEdit",
+              "isLink": false,
+              "childs": [
+                
+              ]
+            }
+          }
+        },
+        "category": {
+          "title": "Categories",
+          "type": "list",
+          "class": "smallfaqCategoryList",
+          "isLink": true,
+          "childs": {
+            "add": {
+              "title": "Kategorie hinzufuegen",
+              "type": "add",
+              "class": "smallfaqCategoryAdd",
+              "isLink": false,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Bearbeiten",
+              "type": "edit",
+              "class": "smallfaqCategoryEdit",
+              "isLink": false,
+              "childs": [
+                
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "db": {
+    "smallfaq": {
+      "rsn": [
+        "int",
+        null,
+        "DB_PRIMARY",
+        true
+      ],
+      "title": [
+        "varchar",
+        "255",
+        "DB_INDEX"
+      ],
+      "category_rsn": [
+        "int",
+        null,
+        "DB_INDEX"
+      ],
+      "content": [
+        "text"
+      ]
+    },
+    "smallfaqCategory": {
+      "rsn": [
+        "int",
+        null,
+        "DB_PRIMARY",
+        true
+      ],
+      "title": [
+        "varchar",
+        "255",
+        "DB_INDEX"
+      ]
+    }
+  },
+  "plugins": {
+    "content": [
+      "List",
+      {
+        "category_rsn": {
+          "label": "Category",
+          "type": "select",
+          "multi": true,
+          "table": "smallfaqCategory",
+          "table_label": "title",
+          "table_id": "rsn"
+        }
+      }
+    ]
+  },
+  "tags": {
+    "de": "",
+    "en": "faq"
+  },
+  "writableFiles": "inc\/template\/smallfaq\/*"
+}

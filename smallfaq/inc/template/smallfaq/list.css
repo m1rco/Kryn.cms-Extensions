@@ -1,0 +1,20 @@
+.optiWikiItem {
+    background-image: url(images/newsDefaultOpenBg.jpg);
+    background-repeat: no-repeat;
+    background-position: 32px 6px;
+    padding-left: 67px;
+    line-height: 34px;
+    position: relative;
+}
+
+.optiWikiItem div {
+}
+
+.optiWikiItem a.arrow {
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 32px;
+    top: 6px;
+}
