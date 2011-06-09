@@ -1,0 +1,19 @@
+{
+  "First-name": "Vorname",
+  "Name": "Name",
+  "Company": "Unternehmen",
+  "Street": "Stra\u00dfe",
+  "ZIP": "PLZ",
+  "City": "Ort",
+  "Phone": "Telefon",
+  "Message": "Nachricht",
+  "Mandatory field": "Pflichtfeld",
+  "Send": "Senden",
+  "First name": "Vorname",
+  "Your request has been submitted successfully and will be answered as soon as possible.": "Ihr Anfrage wurde entgegen genommen und wird so schnell wie m\u00f6glich bearbeitet.",
+  "View Form": "Kontaktformular anzeigen",
+  "Target page": "Zielseite",
+  "Mail handler": "E-Mail versenden",
+  "Email To": "E-Mail an",
+  "Email Subject": "E-Mail Betreff"
+}

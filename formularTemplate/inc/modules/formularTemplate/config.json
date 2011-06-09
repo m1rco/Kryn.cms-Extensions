@@ -1,0 +1,62 @@
+{
+  "title": {
+    "de": "Template Kontaktformulare",
+    "en": "Template contact forms"
+  },
+  "desc": {
+    "de": "Durch templates festgelegte Kontaktformulare. Anfragen werden \u00fcber E-Mail weitergeleitet.",
+    "en": "Contactforms via static template files. Data will be sent via email."
+  },
+  "tags": {
+    "de": "Kontakt, Formulare, Kontaktformular",
+    "en": "Contact, Forms, formular, satic"
+  },
+  "version": "1.0.0",
+  "owner": "1",
+  "community": "1",
+  "category": "19",
+  "plugins": {
+    "viewForm": [
+      "View Form",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/formularTemplate\/forms\/"
+        },
+        "page_id": {
+          "label": "Target page",
+          "type": "page"
+        }
+      }
+    ],
+    "mailHandler": [
+      "Mail handler",
+      {
+        "to": {
+          "label": "Email To",
+          "type": "string"
+        },
+        "subject": {
+          "label": "Email Subject",
+          "type": "string"
+        },
+        "mailtemplate": {
+          "label": "Email Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/formularTemplate\/emailAdmin\/"
+        },
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withExtension": false,
+          "directory": "inc\/template\/formularTemplate\/formSent\/"
+        }
+      }
+    ]
+  },
+  "writableFiles": "inc\/template\/formularTemplate\/*",
+  "depends": ""
+}
