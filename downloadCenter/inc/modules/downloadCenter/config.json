@@ -1,0 +1,332 @@
+{
+  "version": "0.0.10",
+  "owner": 1,
+  "community": "1",
+  "category": "12",
+  "title": {
+    "en": "Download Center"
+  },
+  "desc": {
+    "en": "This download center provides the functionality to upload, manage and list files by categories. All views are completely customizable via templates."
+  },
+  "widgets": {
+    "topDownloadsStats": {
+      "title": "Top downloads",
+      "type": "autotable",
+      "position": "left",
+      "columns": [
+        [
+          "File name",
+          100
+        ],
+        [
+          "File headline"
+        ],
+        [
+          "Downloads",
+          20
+        ]
+      ],
+      "category": "statistic",
+      "withoutCountInTitle": true,
+      "sql": "SELECT item_name, item_headline, download_count FROM %pfx%dlc_items WHERE 1 ORDER BY download_count DESC, item_name"
+    }
+  },
+  "admin": {
+    "downloadCenter": {
+      "title": "DownloadCenter",
+      "isLink": true,
+      "multi": true,
+      "childs": {
+        "categoryList": {
+          "title": "Categories",
+          "type": "list",
+          "class": "downloadCenterCategoryList",
+          "isLink": true,
+          "multi": true,
+          "childs": {
+            "add": {
+              "title": "Add a new category",
+              "type": "add",
+              "class": "downloadCenterCategoryAdd",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Edit an existing category",
+              "type": "edit",
+              "class": "downloadCenterCategoryEdit",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            }
+          }
+        },
+        "itemList": {
+          "title": "Files",
+          "type": "list",
+          "class": "downloadCenterItemList",
+          "isLink": true,
+          "multi": true,
+          "childs": {
+            "add": {
+              "title": "Add new file",
+              "type": "custom",
+              "class": "downloadCenterItemAdd",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            },
+            "edit": {
+              "title": "Edit an existing file",
+              "type": "custom",
+              "class": "downloadCenterItemEdit",
+              "isLink": false,
+              "multi": true,
+              "childs": [
+                
+              ]
+            }
+          }
+        },
+        "multiadd": {
+          "title": "Multiple file add",
+          "type": "custom",
+          "class": "downloadCenterMultipleAdd",
+          "isLink": false,
+          "multi": false,
+          "childs": [
+            
+          ]
+        }
+      }
+    }
+  },
+  "plugins": {
+    "downloadCenterList": [
+      "DownloadCenter List",
+      {
+        "template": {
+          "label": "Template",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/downloadCenter\/list\/"
+        },
+        "iconDir": {
+          "label": "Icon directory",
+          "type": "files",
+          "withoutExtension": true,
+          "directory": "inc\/template\/downloadCenter\/icons\/"
+        },
+        "pageNumbering": {
+          "label": "Show page-numbering",
+          "type": "select",
+          "multi": false,
+          "tableItems": [
+            {
+              "name": "No",
+              "nameKey": "0"
+            },
+            {
+              "name": "Yes",
+              "nameKey": "1"
+            }
+          ],
+          "table_label": "name",
+          "table_id": "nameKey"
+        },
+        "itemsPerPage": {
+          "label": "Files per page",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "maxPages": {
+          "label": "Max pages",
+          "type": "integer",
+          "length": "6",
+          "default": "10"
+        },
+        "orderBy": {
+          "label": "Order by",
+          "type": "select",
+          "multi": false,
+          "tableItems": [
+            {
+              "name": "File name",
+              "nameKey": "item_name"
+            },
+            {
+              "name": "File type",
+              "nameKey": "item_type"
+            },
+            {
+              "name": "Headline",
+              "nameKey": "item_headline"
+            },
+            {
+              "name": "Category",
+              "nameKey": "cat_rsn"
+            },
+            {
+              "name": "Date",
+              "nameKey": "created"
+            },
+            {
+              "name": "Download count",
+              "nameKey": "download_count"
+            }
+          ],
+          "table_label": "name",
+          "table_id": "nameKey"
+        },
+        "sortSeq": {
+          "label": "Sort sequence",
+          "type": "select",
+          "multi": false,
+          "tableItems": [
+            {
+              "name": "Ascending",
+              "nameKey": "ASC"
+            },
+            {
+              "name": "Descending",
+              "nameKey": "DESC"
+            }
+          ],
+          "table_label": "name",
+          "table_id": "nameKey"
+        },
+        "cat_rsn": {
+          "label": "Category\/s",
+          "desc": "Only display downloads from this categories",
+          "type": "select",
+          "multi": true,
+          "table": "dlc_categories",
+          "table_label": "cat_name",
+          "table_id": "rsn"
+        }
+      }
+    ]
+  },
+  "db": {
+    "dlc_categories": {
+      "rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "cat_name": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "hash": [
+        "varchar",
+        "255",
+        "DB_INDEX",
+        false
+      ],
+      "lang": [
+        "varchar",
+        "2",
+        "-",
+        false
+      ]
+    },
+    "dlc_items": {
+      "item_rsn": [
+        "int",
+        "",
+        "DB_PRIMARY",
+        true
+      ],
+      "cat_rsn": [
+        "int",
+        "",
+        "DB_INDEX",
+        false
+      ],
+      "item_name": [
+        "varchar",
+        "255",
+        "DB_FULLTEXT",
+        false
+      ],
+      "item_headline": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "item_desc": [
+        "text",
+        "",
+        "DB_FULLTEXT",
+        false
+      ],
+      "item_type": [
+        "varchar",
+        "10",
+        "-",
+        false
+      ],
+      "item_filesize": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "preview_image": [
+        "varchar",
+        "255",
+        "-",
+        false
+      ],
+      "download_from": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "download_to": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "download_count": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "created": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "lang": [
+        "varchar",
+        "2",
+        "-",
+        false
+      ]
+    }
+  },
+  "tags": {
+    "en": "download, center, files, file"
+  },
+  "writableFiles": "inc\/template\/downloadCenter\/*",
+  "depends": "kryn=>0.8.0"
+}
