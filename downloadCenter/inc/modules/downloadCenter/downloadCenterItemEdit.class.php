@@ -36,7 +36,11 @@ class downloadCenterItemEdit extends windowEdit {
                 'desc' => 'If you do not want to limit the download, leave it empty',
                 'type' => 'datetime'
                 
-            )            
+            ),
+            'own_sort' => array(
+					'label' => 'Sort',
+					'type' => 'int'
+				)              
         ),
         'File' => array(
             'item_name' => array(

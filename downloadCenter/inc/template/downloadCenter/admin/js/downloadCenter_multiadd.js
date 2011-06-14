@@ -1,8 +1,7 @@
 var dlcFileNameConvert = function(pFile, pSecParam) {
-	rName = pSecParam.substr(( pSecParam.indexOf(_sid) + _sid.length + 2));
-	rName = rName.substr(0, rName.length-1);	
-	
-	return rName;
+   rName = pSecParam.substr(( pSecParam.lastIndexOf('/') + 1));
+   rName = rName.substr(0, rName.length-1);  
+   return rName;
 }
 
 
