@@ -69,8 +69,8 @@ class downloadCenter extends BaseModule {
        if($categories)
             $sql .= " i.cat_rsn IN (".$categories.") AND ";             
         $sql .= " i.cat_rsn = c.rsn
-                AND ( (download_from = 0 OR download_from < ".time().") AND (download_to = 0 OR download_to > ".time().") )            
-                ORDER BY ".$orderBy." ".$sortSeq.", item_name LIMIT $start, ".$pConf['itemsPerPage'];    
+                AND ( (download_from = 0 OR download_from < ".time().") AND (download_to = 0 OR download_to > ".time().") ) 
+                ORDER BY ".$orderBy." ".$sortSeq.", item_name LIMIT ".$pConf['itemsPerPage']." OFFSET ". $start;            
         
         
         

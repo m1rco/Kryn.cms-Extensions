@@ -1,5 +1,5 @@
 {
-  "version": "0.0.10",
+  "version": "0.0.11",
   "owner": 1,
   "community": "1",
   "category": "12",
@@ -180,6 +180,10 @@
               "nameKey": "created"
             },
             {
+              "name": "Own sort",
+              "nameKey": "own_sort"
+            },
+            {
               "name": "Download count",
               "nameKey": "download_count"
             }
@@ -311,6 +315,12 @@
         false
       ],
       "created": [
+        "int",
+        "",
+        "-",
+        false
+      ],
+      "own_sort": [
         "int",
         "",
         "-",
