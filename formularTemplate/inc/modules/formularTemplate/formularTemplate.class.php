@@ -32,7 +32,7 @@ class formularTemplate extends baseModule {
         if( $pConfig['mailtemplate'] == '' || !$pConfig['mailtemplate'] )
             $pConfig['mailtemplate'] = 'default';
             
-        $template = 'formularTemplate/emailAdmin/'.$pConfig['template'].'.tpl';
+        $template = 'formularTemplate/emailAdmin/'.$pConfig['mailtemplate'].'.tpl';
         
         $body = tFetch($template);
         
